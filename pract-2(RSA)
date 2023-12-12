@@ -1,0 +1,42 @@
+Practical-2
+
+Aim: RSA Encryption and Decryption:
+Implement the RSA algorithm for public-key encryption and decryption, and explore its
+properties and security considerations.
+
+Code:
+
+import math
+#step1
+p=3
+q=7
+#step2
+n=p*q
+print("n =",n)
+#step3
+phi=(p-1)* (q-1)
+#step4
+e=2
+while (e<phi):
+    if (math.gcd(e, phi) == 1):
+        break
+    else:
+        e+=1
+print("e =",e)
+#step5
+k=2
+d=((k*phi)+1)/e
+print("d =",d)
+print("Public key:",e,n)
+print("Private key:",d,n)
+#plaintext
+msg=11
+print("Original message:",msg)
+#encryption
+C=pow(msg,e)
+C=math.fmod(C,n)
+print("Encrypted message:",C)
+#decryption
+M=pow(C,d)
+M=math.fmod(M,n)
+print("Decrypted message:",M)
