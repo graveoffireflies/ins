@@ -1,0 +1,58 @@
+#prac1
+
+"------Ceaser--------"
+
+def enc1(text,k):
+    ans=""
+    for i in text:
+      if(i.isupper()):
+        ans+=chr((ord(i)+k-65)%26+65)
+      else:
+        ans+=chr((ord(i)+k-97)%26+97)
+    return ans
+
+def dec1(text,k):
+    ans=""
+    for i in text:
+      if(i.isupper()):
+        ans+=chr((ord(i)-k-65)%26+65)
+      else:
+        ans+=chr((ord(i)-k-97)%26+97)
+    return ans
+
+# print(enc1("ajay",5))
+print(dec1(enc1("ajay",5),5))
+----------------------------------------------------------------------------------------------------------------------------
+
+"------monoalfa----------"
+
+norm=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+coded=['k','l','m','a','b','c','d','e','f','g','h','i','j','n','o','u','v','w','p','q','r','s','t','x','y','z']
+def enc2(text):
+  ans=""
+  for i in text:
+    if i not in norm: ans+=i;continue;
+    ans+=coded[norm.index(i)]
+  return ans
+
+def dec2(text):
+  ans=""
+  for i in text:
+    if i not in norm: ans+=i;continue;
+    ans+=norm[coded.index(i)]
+  return ans
+# print(enc2("ajay kumar"))
+print(dec2(enc2("ajay kjf")))
+---------------------------------------------------------------------------------------------------------------------------------
+
+"--------railfence--------"
+
+def enc3(text,k):
+  dir=1
+  idx=0
+  ans=[""]*k
+  for i in text:
+    ans[idx]+=i
+    if idx+dir>=k or idx+dir<0:dir=-dir
+    idx+=dir
+  print("".join(ans))
