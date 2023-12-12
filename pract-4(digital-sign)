@@ -5,6 +5,7 @@ Aim: To study and implement the Digital Signature algorithm
 pip install pycryptodome
 
 Code: Python code for implementing SHA Algorithm
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
