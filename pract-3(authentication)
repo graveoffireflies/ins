@@ -3,6 +3,7 @@ Practical 3
 Message Authentication Codes: Implement algorithms to generate and verify message authentication codes (MACs) for ensuring data integrity and authenticity.
 
 1)	Using hmac
+-----------------------------------------------------------------------------------------------------------------
 
 import hmac
 message="Welcome to TYCS."
